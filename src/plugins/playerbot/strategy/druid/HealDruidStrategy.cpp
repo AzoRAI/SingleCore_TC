@@ -12,6 +12,7 @@ public:
     {
     }
 private:
+
 };
 
 HealDruidStrategy::HealDruidStrategy(PlayerbotAI* ai) : GenericDruidStrategy(ai)

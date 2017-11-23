@@ -124,4 +124,14 @@ namespace ai {
     public:
         BashInterruptEnemyHealerSpellTrigger(PlayerbotAI* ai) : InterruptEnemyHealerTrigger(ai, "bash") {}
     };
+
+
+
+	// 
+	//
+	//
+	class LifeBloomTrigger : public PartyMemberNeedCureTrigger {
+	public:
+		LifeBloomTrigger(PlayerbotAI* ai) : PartyMemberNeedCureTrigger(ai, "life bloom") {}
+	};
 }

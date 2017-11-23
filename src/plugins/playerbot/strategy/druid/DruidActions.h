@@ -19,41 +19,123 @@ namespace ai
         CastFaerieFireFeralAction(PlayerbotAI* ai) : CastSpellAction(ai, "faerie fire (feral)") {}
     };
 
-	class CastRejuvenationAction : public CastHealingSpellAction {
-	public:
-		CastRejuvenationAction(PlayerbotAI* ai) : CastHealingSpellAction(ai, "rejuvenation") {}
-	};
-
-	class CastRegrowthAction : public CastHealingSpellAction {
-	public:
-		CastRegrowthAction(PlayerbotAI* ai) : CastHealingSpellAction(ai, "regrowth") {}
-	};
-
 	class CastProwlAction : public CastSpellAction {
 	public:
 		CastProwlAction(PlayerbotAI* ai) : CastSpellAction(ai, "prowl") {}
 	virtual string GetTargetName() { return "self target"; }
 
 	};
+	
+	// Target: Self 
+	// Healing: Rejuvenation (HoT)
+	//
+	class CastRejuvenationAction : public CastHealingSpellAction {
+	public:
+		CastRejuvenationAction(PlayerbotAI* ai) : CastHealingSpellAction(ai, "rejuvenation") {}
+	};
 
+	// Target: Self 
+	// Healing: Regrowth (HoT)
+	//
+	class CastRegrowthAction : public CastHealingSpellAction {
+	public:
+		CastRegrowthAction(PlayerbotAI* ai) : CastHealingSpellAction(ai, "regrowth") {}
+	};
+
+	// Target: Self 
+	// Healing: Life Bloom (HoT)
+	//
+	class CastLifeBloomAction : public CastHealingSpellAction {
+	public:
+		CastLifeBloomAction(PlayerbotAI* ai) : CastHealingSpellAction(ai, "life bloom") {}
+	};
+
+	// Target: Self 
+	// Healing: Wild Growth (AoE HoT)
+	//
+	class CastWildGrowthAction : public CastHealingSpellAction {
+	public:
+		CastWildGrowthAction(PlayerbotAI* ai) : CastHealingSpellAction(ai, "wild growth") {}
+	};
+
+	// Target: Self 
+	// Healing: Nourish (Short cast heal after HoTs applied)
+	//
+	class CastNourishAction : public CastHealingSpellAction {
+	public:
+		CastNourishAction(PlayerbotAI* ai) : CastHealingSpellAction(ai, "nourish") {}
+	};
+
+	// Target: Self 
+	// Healing: Swiftmend (Talent Cooldown)
+	//
+	class CastSwiftmendAction : public CastHealingSpellAction {
+	public:
+		CastSwiftmendAction(PlayerbotAI* ai) : CastHealingSpellAction(ai, "swiftmend") {}
+	};
+
+	// Target: Self
+	// Healing: Healing Touch (Long cast)
+	//
     class CastHealingTouchAction : public CastHealingSpellAction {
     public:
         CastHealingTouchAction(PlayerbotAI* ai) : CastHealingSpellAction(ai, "healing touch") {}
-
     };
 
+	// Target: Party
+	// Healing: Rejuvenation (HoT)
+	//
     class CastRejuvenationOnPartyAction : public HealPartyMemberAction
     {
     public:
         CastRejuvenationOnPartyAction(PlayerbotAI* ai) : HealPartyMemberAction(ai, "rejuvenation") {}
     };
 
+	// Target: Party
+	// Healing: Regrowth (HoT)
+	//
     class CastRegrowthOnPartyAction : public HealPartyMemberAction
     {
     public:
         CastRegrowthOnPartyAction(PlayerbotAI* ai) : HealPartyMemberAction(ai, "regrowth") {}
     };
 
+	// Target: Party
+	// Healing: Life Bloom (HoT)
+	//
+	class CastLifeBloomOnPartyAction : public HealPartyMemberAction {
+	public:
+		CastLifeBloomOnPartyAction(PlayerbotAI* ai) : HealPartyMemberAction(ai, "life bloom") {}
+	};
+
+	//
+	// Healing: Wild Growth (Talent Cooldown: AoE Heal)
+	//
+	class CastWildGrowthOnPartyAction : public HealPartyMemberAction
+	{
+	public:
+		CastWildGrowthOnPartyAction(PlayerbotAI* ai) : HealPartyMemberAction(ai, "wild growth") {}
+	};
+
+	// Target: Party
+	// Healing: Nourish (Short cast after HoTs applied)
+	//
+	class CastNourishOnPartyAction : public HealPartyMemberAction {
+	public:
+		CastNourishOnPartyAction(PlayerbotAI* ai) : HealPartyMemberAction(ai, "nourish") {}
+	};
+
+	// Target: Party
+	// Healing: Swiftmend (Talent Cooldown)
+	//
+	class CastSwiftmendOnPartyAction : public HealPartyMemberAction {
+	public:
+		CastSwiftmendOnPartyAction(PlayerbotAI* ai) : HealPartyMemberAction(ai, "swiftmend") {}
+	};
+
+	// Target: Party
+	// Healing: Healing Touch (Large Cast)
+	//
     class CastHealingTouchOnPartyAction : public HealPartyMemberAction
     {
     public:
